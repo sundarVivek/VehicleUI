@@ -1,0 +1,47 @@
+<body>
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <nav class="navbar justify-content-between">
+        <div class="backToHome">
+            <a class="navbar-brand">
+                <i class="fa fa-fw fa-home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-house-door" viewBox="0 0 16 16">
+                        <path
+                            d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z" />
+                    </svg>
+                </i>
+            </a>
+        </div>
+        <form class="form-inline">
+            <div class="search">
+                <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchText"
+                    placeholder="Search by Vehicle NO" aria-label="Search" name="searchText">
+                <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="applyFilter()">Search</button> -->
+            </div>
+        </form>
+    </nav>
+    <table class="table table-dark">
+        <thead>
+            <th scope="col">Vehicle No</th>
+            <th scope="col">Service date</th>
+            <th scope="col">Service Type</th>
+            <th scope="col">Status</th>
+            <!-- <th scope="col"></th>
+            <th scope="col"></th> -->
+    </thead>
+           <tbody>
+                <tr *ngFor="let item of serviceData|searchService:searchText">
+                    <td class="vehicleNo" (click)="details(item.vehicle_no)">{{item.vehicle_no}}</td>
+                    <td>{{item.service_date}}</td>
+                    <td>{{item.service_type}}</td>
+                    <td>{{item.service_status}}</td>
+                </tr>
+            </tbody>
+      </table>
+
+    <div *ngIf="showErrorMessage">
+        <app-no-data-found></app-no-data-found>
+    </div>
+    
+</body>

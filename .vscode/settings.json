@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e4539fd7-65e6-4a65-add3-6d8afed65a09/resourceGroups/VehicleFSDApp_group/providers/Microsoft.Web/sites/vehicleFSDAngular",
+    "appService.deploySubpath": "dist"
+}

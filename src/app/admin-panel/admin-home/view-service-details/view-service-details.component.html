@@ -1,0 +1,48 @@
+<body>
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+        <table class="table">
+          <tr>
+            <th class="heading gradient-custom-2">ID</th>
+            <td>{{serviceId}}</td>
+          </tr>
+          <tr>
+            <th class="heading gradient-custom-2">Vehicle No</th>
+            <td>{{vehicleNo}}</td>
+          </tr>
+          <tr>
+            <th class="heading gradient-custom-2">Owner</th>
+            <td>{{owner}}</td>
+          </tr>
+          <tr>
+            <th class="heading gradient-custom-2">Model</th>
+            <td>{{model}}</td>
+          </tr>
+          <tr>
+            <th class="heading gradient-custom-2">Appointment Date</th>
+            <td>{{date|date:'dd/MM/yy'}}</td>
+          </tr>
+          <tr>
+            <th class="heading gradient-custom-2">Contact</th>
+            <td>{{contact}}</td>
+          </tr>
+          <tr>
+            <th class="heading gradient-custom-2">Service type</th>
+            <td>{{serviceType}}</td>
+          </tr>
+          <tr>
+            <th class="heading gradient-custom-2">Service status</th>
+            <td>  
+              <div class="statusContainer">
+                <form [formGroup]="statusForm">
+                  <select class="status" formControlName="status" name="status" (change)="changeStatus()">
+                    <option class="text" value="Ready for service">Ready for service</option>
+                    <option class="text" value="Service in progress">Service in progress</option>
+                    <option class="text" value="Ready for delivery">Ready for delivery</option>
+                  </select>
+                </form>
+            </div>
+          </td>
+          </tr>
+        </table>
+  </body>

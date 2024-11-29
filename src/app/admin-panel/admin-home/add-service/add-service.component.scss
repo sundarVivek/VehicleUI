@@ -1,0 +1,67 @@
+.container {
+    padding-top: 170px;
+    background-color: black;
+    padding-left: 200px;
+    margin: 0;
+
+}
+
+.row{
+    width: 100%;
+}
+
+label {
+    color: white;
+}
+
+.btn-danger {
+    width: 368px;
+}
+
+.img-fluid {
+    width: 200px;
+}
+
+.icon {
+    margin-left: 612px;
+}
+
+.radioContainer {
+    display: inline-flex;
+    padding-bottom: 30px;
+}
+
+.form-check-input {
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+}
+
+.form-check-label {
+    margin-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.navbar {
+    background-color: red !important;
+}
+
+.col-12 {
+    padding-bottom: 30px;
+    // display: flex;
+    // justify-content: flex-start;
+}
+
+.errorMessage {
+    color: red;
+}
+
+.borderRed {
+    border: red 1px solid;
+}
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}

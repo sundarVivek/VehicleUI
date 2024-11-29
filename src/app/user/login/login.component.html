@@ -1,0 +1,63 @@
+
+  <body>
+      <section class="h-100 gradient-form" style="background-color: black;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                  <div class="col-lg-6 yamahaLogo">
+                    <div class="card-body p-md-5 mx-md-4">
+                      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-outline mb-4">
+                          <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                        
+                            <!-- <img src="assets\images\yamaha-logo-3860.png"
+                                class="img-fluid" alt="Phone image"> -->
+                                <img src="\assets\images\TRACKO-DS.png"
+                                class="img-fluid" alt="Brand logo">
+                          </div>
+                          <div class="input-group mb-4">
+                            <span class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                              </svg>
+                            </span>
+                            <input type="text" id="form2Example11" class="form-control"
+                            placeholder="Username" formControlName="customer_name" />
+                          </div>
+                      
+                        <div class="input-group mb-4">
+                          <span class="input-group-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                              <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                            </svg>
+                          </span>
+                          <input type="password" placeholder="Password" id="form2Example22" class="form-control" formControlName="VehilceNo" />
+                          <!-- <label class="form-label" for="form2Example22">Password</label> -->
+                        </div>
+                 
+                        <span class="error-message" *ngIf="submitted&&loginForm.invalid">Please provide valid credentials </span>
+                        <div class="text-center pt-1 mb-5 pb-1">
+                          <button class="btn btn-danger btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                          [disabled]="this.loading">LOGIN</button>
+                        </div>
+                        <div>
+                          <h1 class="text">{{errorMessage}}</h1>
+                        </div>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                      <p class="small mb-0 text">This login page is exclusively for authorized administrators. Unauthorized access is strictly prohibited and may result in legal action. By proceeding, you acknowledge that you are an authorized administrator and are accessing this system in accordance with company policies.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>

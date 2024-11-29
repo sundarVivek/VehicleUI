@@ -1,0 +1,219 @@
+<body>
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+  <div class="main-container">
+    <section class="h-100 gradient-form">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-12">
+            <div class="card rounded-3 text-black">
+              <div class="row g-0 allContainer">
+                <div class="col-lg-4">
+                  <div class="card-body p-md-5 mx-md-4">
+                    <form [formGroup]="vehicleNumberForm" (ngSubmit)="onSubmit()">
+                      <div class="form-outline mb-4">
+                        <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                          <img src="assets\images\yamaha-logo-3860.png" class="img-fluid" alt="Phone image">
+                        </div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-person" viewBox="0 0 16 16">
+                              <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg>
+                          </span>
+                          <input type="text" id="vehicleNo" class="form-control" (input)="formatVehicleNumber()"
+                            placeholder="TN 45 CB 9457" formControlName="vehicleNo" name="vehicleNo">
+                        </div>
+                      </div>
+                      <!-- <span class="error-message">Please provide valid credentials </span> -->
+                      <div class="text-center pt-1 mb-5 pb-1">
+                        <button class="btn btn-danger btn-block fa-lg gradient-custom-2 mb-3"
+                          type="submit">Search</button>
+                      </div>
+                      <div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-lg-8 d-flex align-items-center justify-content-center Norecords"
+                  *ngIf="showNoRecordsFound">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <div class="customerData">
+                      <mat-card class="example-card">
+                        <mat-card-header>
+                          <mat-card-title-group>
+                          </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-content>
+                          <div class="card-content">
+                            <span>Search for vehicle number to get details
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                              </svg>
+                            </span>
+                          </div>
+                        </mat-card-content>
+                      </mat-card>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-8 d-flex align-items-center justify-content-center" *ngIf="showCustomerData">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <div class="customerData">
+                      <mat-card class="example-card">
+                        <mat-card-header>
+                          <mat-card-title-group>
+                          </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-content>
+                          <div class="card-content">
+                            <div class="content-inner-div">
+                              <label class="label">Owner</label>
+                              <span class="customerdata">{{customerData.registered_certificate_name}}</span>
+                            </div>
+                            <div class="content-inner-div">
+                              <label class="label">Vehicle number</label>
+                              <span class="customerdata">{{customerData.vehicle_no}}</span>
+                            </div>
+                            <div class="content-inner-div">
+                              <label class="label">Model name</label>
+                              <span class="customerdata">{{customerData.email}}</span>
+                            </div>
+                            <div class="content-inner-div">
+                              <label class="label">Chasis number</label>
+                              <span class="customerdata">{{customerData.vehicle_brand}}</span>
+                            </div>
+                            <div class="content-inner-div">
+                              <label class="label">Contact</label>
+                              <span class="customerdata">{{customerData.model_name}}</span>
+                            </div>
+                            <div class="content-inner-div">
+                              <label class="label">Contact</label>
+                              <span class="customerdata">{{customerData.vehicle_type}}</span>
+                            </div>
+                            <div class="content-inner-div">
+                              <label class="label">Contact</label>
+                              <span class="customerdata">{{customerData.contactNo}}</span>
+                            </div>
+                          </div>
+                        </mat-card-content>
+                      </mat-card>
+                      <div class="button-container">
+                        <button type="button" class="btn btn-primary customer-data-button"
+                          [disabled]="confirmButtonDisabled" (click)="confirm()">Confirm</button>
+                        <button type="button" class="btn btn-success customer-data-button"
+                          [disabled]="addServiceButtonDisabled" (click)="addService()">Continue</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-6 d-flex align-items-center justify-content-center add-service-container"
+                  *ngIf="showAddService">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <div class="addServiceContainer">
+                      <form [formGroup]="addServiceForm" (ngSubmit)="finalAddService()">
+                        <div class="col-md-12">
+                          <label for="inputPassword4" class="form-label">VEHICLE NO</label>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-car-front-fill" viewBox="0 0 16 16">
+                                <path
+                                  d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
+                              </svg>
+                            </span>
+                            <input type="text" class="form-control" id="inputPassword4" formControlName="vehicle_no"
+                              placeholder="TN 01 AB 1234">
+                          </div>
+                          <span class="errorMessage"
+                            *ngIf="addServiceForm.get('vehicle_no')?.hasError('pattern') && addServiceForm.get('vehicle_no')?.touched">
+                            Vehicle number must be in (TN 01 we 9457)
+                          </span>
+                        </div>
+                        <div class="col-md-12">
+                          <label for="inputPassword4" class="form-label">APPOINTMENT DATE</label>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path
+                                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                              </svg>
+                            </span>
+                            <input type="date" class="form-control" id="inputPassword4" formControlName="service_date">
+                          </div>
+
+                        </div>
+                        <div class="col-md-12">
+                          <label for="inputState" class="form-label">Service Type</label>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-gear" viewBox="0 0 16 16">
+                                <path
+                                  d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                                <path
+                                  d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
+                              </svg>
+                            </span>
+                            <select class="form-select" formControlName="service_type" id="service_type">
+                              <option value="" disabled>Select</option>
+                              <option *ngFor="let option of serviceTypes" [value]="option">{{ option }}</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="radioLabel">
+                          <label class="form-label">DO YOU HAVE ANY COMPLAINT?</label>
+                        </div>
+                        <div class="complaint">
+                          <div class="radioContainer">
+                            <div class="form-check">
+                              <input (change)="changeRadio()" class="form-check-input" type="radio"
+                                id="flexCheckDefault" formControlName="iSComplaint" value="yes">
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Yes
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input (change)="changeRadio()" class="form-check-input" type="radio"
+                                id="flexCheckDefault" formControlName="iSComplaint" value="no">
+                              <label class="form-check-label" for="flexCheckDefault">
+                                No
+                              </label>
+                            </div>
+                          </div>
+                          <div *ngIf="showComplaintbox">
+                            <div>
+                              <label for="inputPassword4" class="form-label complaints">COMPLAINTS</label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label for="inputPassword4" class="form-label"></label>
+                              <input type="text" class="form-control" id="inputPassword4"
+                                formControlName="complaintbox">
+                            </div>
+                          </div>
+                          <br>
+                        </div>
+                        <div class="button-container1 col-md-12">
+                          <button type="submit" [disabled]="addServiceForm.invalid" class="btn btn-success customer-data-button w-100">Add service</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>

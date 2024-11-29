@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.gradient-custom-2 {
+    color: white;
+    background: #fccb90;
+    background: linear-gradient(to right, #730606, #dc1217);
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    border: 1px solid black;
+    border-radius: 25px !important;
+}
+
+.text {
+    color: white;
+}
+
+.shadow {
+    box-shadow: 5px 5px 5px 5px #140000;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.error-message {
+    color: white;
+    background: linear-gradient(to right, #730606, #dc1217, #4E342E, #0d0c0c);
+    padding: 10px;
+    border-radius: 20px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+

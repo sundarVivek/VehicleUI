@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    width: 100%;
+    background-color: black;
+    height: fit-content;
+    padding-top: 170px;
+}
+label{
+    color: white;
+}
+.col-md-6{
+    margin-left: 272px;
+    margin-bottom: 20px;
+}
+.complaints{
+    margin-left: 272px;
+}
+.btn-danger{
+    width: 368px;
+}
+.col-12{
+    margin-left: 272px;
+    margin-top: 50px;
+}
+.img-fluid{
+    width: 200px;
+}
+.icon{
+    margin-left: 612px;
+}
+.radioContainer{
+    display: inline-flex;
+    margin-left: 271px;
+    padding-bottom: 30px;
+}
+.radioLabel{
+    margin-left: 271px;
+}
+.form-check-input{
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+}
+.form-check-label{
+    margin-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.navbar{
+    background-color: red !important;
+}
+.col-12{
+    padding-bottom: 30px;
+}
+.errorMessage{
+    color: red;
+}
+
+.borderRed{
+    border: red 1px solid; 
+}

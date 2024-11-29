@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  background-color: white;
+
+  .col-md-12 {
+    padding: 10px 0px 20px 0px;
+  }
+
+  .label {
+    background: red;
+    padding: 10px;
+    color: white;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-inner-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .table {
+    width: fit-content;
+  }
+
+  .table thead th {
+    background-color: red;
+    color: white;
+  }
+  .customerdata {
+    border: 1px solid grey !important;
+  }
+  .customerData{
+    display: flex;
+    justify-content: center;
+  }
+  .example-card{
+    width: 50%;
+  }
+  .redLine{
+    width: 100%;
+    height: 25px;
+    background-color: red;
+  }
+  .card{
+    width: 300px;
+    text-align: center;
+  }
+  .card-header{
+    color: white;
+    background-color: red;
+  }
+}

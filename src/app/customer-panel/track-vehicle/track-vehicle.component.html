@@ -1,0 +1,113 @@
+<body>
+  <app-header></app-header>
+  <mat-tab-group>
+    <mat-tab label="" class="matTab1">
+      <ng-template mat-tab-label>
+        <mat-icon class="icon-color">track_changes</mat-icon>
+      </ng-template>
+      <!-- Your tab content here -->
+      <div class="timeline3">
+        <div class="outer">
+          <div class="card">
+            <div class="info">
+              <h3 class="title text gradient-custom-2" [ngClass]="{ 'blink': isReadyForServiceBlinking }">READY FOR SERVICE</h3>
+              <img src="\assets\images\bike-red.png.png" class="bike-image" alt="" [ngClass]="{ 'blink': isReadyForServiceBlinking }">
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <h3 class="title text gradient-custom-2">SERVICE IN PROGRESS</h3>
+              <img src="\assets\images\bike-red.png.png" class="bike-image" alt="">
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <h3 class="title text gradient-custom-2">READY FOR DELIVERY</h3>
+              <img src="\assets\images\bike-red.png.png" class="bike-image" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="" class="matTab2">
+      <ng-template mat-tab-label>
+        <mat-icon class="icon-color">details</mat-icon>
+      </ng-template>
+      <!-- Cards with media area -->
+      <div class="serviceDateContainer">
+        <div class="serviceDateInnerContainer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+            <circle cx="8" cy="8" r="8"/>
+          </svg>
+          <label>Last service date:</label>
+          <span class="red-text"> 10/06/2024</span>
+        </div>
+        <div class="serviceDateInnerContainer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+            <circle cx="8" cy="8" r="8"/>
+          </svg>
+          <label>Next service date:</label>
+          <span class="red-text"> 10/09/2024</span>
+        </div>
+      </div>
+      <div class="matTab2"> 
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title-group>
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="card-content">
+              <div class="content-inner-div">
+                <label class="label">Owner</label>
+                <span class="customerdata">{{userDetails.registered_certificate_name}}</span>
+              </div>
+              <div class="content-inner-div">
+                <label class="label">Vehicle number</label>
+                <span class="customerdata">{{userDetails.vehicle_no}}</span>
+              </div>
+              <div class="content-inner-div">
+                <label class="label">Vehicle Brand</label>
+                <span class="customerdata">{{userDetails.vehicle_brand}}</span>
+              </div>
+              <div class="content-inner-div">
+                <label class="label">Vehicle Type</label>
+                <span class="customerdata">{{userDetails.vehicle_type}}</span>
+              </div>
+              <div class="content-inner-div">
+                <label class="label">Model name</label>
+                <span class="customerdata">{{userDetails.model_name}}</span>
+              </div>
+              <div class="content-inner-div">
+                <label class="label">Vehicle type</label>
+                <span class="customerdata">{{userDetails.vehicle_type}}</span>
+              </div>
+              <div class="content-inner-div">
+                <label class="label">Contact</label>
+                <span class="customerdata">{{userDetails.contact_no}}</span>
+              </div>
+              <div class="content-inner-div">
+                <label class="label">Number of services</label>
+                <span class="customerdata">{{userDetails.no_of_services}}</span>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="matTab3">
+      <ng-template mat-tab-label>
+        <mat-icon class="icon-color">history</mat-icon>
+      </ng-template>
+      <div class="timeline3">
+        <div class="outer">
+          <div class="card card3" *ngFor="let item of servicedDates">
+            <div class="info" (click)="downloadPDF(item)">
+              <h3 class="title service-history-dates red-text">{{item}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</body>

@@ -1,0 +1,85 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    color: white;
+    margin: 50px 100px 50px 100px;
+    border: 1px solid black;
+    box-shadow: rgba(232, 185, 185, 0.15) 0px 3px 3px 0px;
+    display: flex;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    transform: scale(1.1);
+    /* Adjust the scale factor for the desired zoom level */
+    cursor: pointer;
+    transition: box-shadow 600ms,
+        transform 600ms;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    // margin-left: 88px;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+svg {
+    display: flex;
+    justify-content: center;
+}
+.gradient-custom-2{
+    background: linear-gradient(to right, #730606, #dc1217,#dc1217, #730606);
+}
+.title{
+    margin-top: 20px;
+    color: black;
+    font-size:large;
+}
+svg{
+    color: black;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+@media screen and (max-width:1000px) {
+    .card {
+        width: 200px;
+        height: 200px;
+        margin: 34px 50px 16px 50px;
+        display: flex;
+    }
+    .container{
+        margin-top: 12px;
+    }
+    .img-fluid {
+        max-width: 265px;
+        height: auto;
+    }
+    
+}

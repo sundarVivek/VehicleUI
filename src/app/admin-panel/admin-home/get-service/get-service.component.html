@@ -1,0 +1,69 @@
+
+  <body>
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form [formGroup]="getServiceForm" (ngSubmit)="onSubmit()">
+            <div class="notification">
+              <p id="para">Enter your vehicle number in this format : TN 01 CB 1234</p>
+              <p></p>
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4 col-md-12">
+              <input type="text" id="form1Example13" class="form-control form-control-lg" placeholder="Vehicle No" formControlName="vehicleNo" />
+            </div>
+            <div class="form-outline mb-4 col-md-12">
+              <input type="text" id="form1Example13" class="form-control form-control-lg" placeholder="Owner name" formControlName="customer_name" />
+            </div>
+            <div class="submitbtn">
+                <button type="submit" class="gradient-custom-2 loginBtn btn-danger">GET SERVICE</button>
+            </div>
+          </form>
+        </div>
+        <div class="col" *ngIf="showService">
+          <div class="customerData">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title-group>
+                  </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>
+                  <div class="card-content">
+                    <div class="content-inner-div">
+                      <label class="label">Owner</label>
+                      <span class="customerdata">{{filteredActiveService.registered_certificate_name}}</span>
+                    </div>
+                    <div class="content-inner-div">
+                      <label class="label">Vehicle number</label>
+                      <span class="customerdata">{{filteredActiveService.vehicle_no}}</span>
+                    </div>
+                    <div class="content-inner-div">
+                      <label class="label">Appointment date</label>
+                      <span class="customerdata">{{fetchActiveService[0].service_date}}</span>
+                    </div>
+                    <div class="content-inner-div">
+                      <label class="label">Service type</label>
+                      <span class="customerdata">{{fetchActiveService[0].service_type}}</span>
+                    </div>
+                    <div class="content-inner-div">
+                      <label class="label">No of service</label>
+                      <span class="customerdata">{{filteredActiveService.no_of_services}}</span>
+                    </div>
+                    <div class="content-inner-div">
+                      <label class="label">service status</label>
+                      <span class="customerdata">{{fetchActiveService[0].service_status}}</span>
+                    </div>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+              <div class="button-container">
+                <button type="button" class="btn btn-success customer-data-button" (click)="openDialog()">Change status</button>
+                <button type="button" class="btn btn-danger customer-data-button">Back</button>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </body>

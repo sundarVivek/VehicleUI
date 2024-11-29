@@ -1,0 +1,99 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="container">
+  <form [formGroup]="addVehicleForm" (ngSubmit)="onSubmit()">
+    <div class="row mb-4">
+      <div class="col-12 col-md-6 col-sm-12 col-lg-4">
+        <div class="form-group">
+          <label class="text-white" for="Registered_certificate_name">Username</label>
+          <input type="text" placeholder="Registered certificate name" class="form-control"
+            id="Registered_certificate_name" name="Registered_certificate_name"
+            formControlName="Registered_certificate_name"
+            [ngClass]="{'is-invalid': (isSubmitted || addVehicleForm.controls['Registered_certificate_name'].touched) && addVehicleForm.controls['Registered_certificate_name'].invalid}">
+          <span class="text-danger"
+            *ngIf="addVehicleForm.controls?.['Registered_certificate_name']?.touched&&addVehicleForm.controls?.['Registered_certificate_name']?.errors">Please
+            enter valid pattern</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-sm-12 col-lg-2">
+        <div class="form-group">
+          <label class="text-white" for="contactNo">Contact number</label>
+          <input type="text" placeholder="Contact number" class="form-control" id="contactNo" name="contactNo"
+            formControlName="contactNo"
+            [ngClass]="{'is-invalid': (isSubmitted || addVehicleForm.controls['contactNo'].touched) && addVehicleForm.controls['contactNo'].invalid}">
+          <span class="text-danger"
+            *ngIf="addVehicleForm.controls?.['contactNo']?.touched&&addVehicleForm.controls?.['contactNo']?.invalid">Please
+            enter your 10 digit mobile number</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-sm-12 col-lg-4">
+        <div class="form-group">
+          <label class="text-white" for="Email">Email</label>
+          <input type="email" placeholder="Email" class="form-control" id="Email" name="Email" formControlName="Email"
+            [ngClass]="{'is-invalid': (isSubmitted || addVehicleForm.controls['Email'].touched) && addVehicleForm.controls['Email'].invalid}">
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-sm-12 col-lg-2">
+        <label class="text-white" for="Gender">Gender</label>
+        <select class="form-select" formControlName="Gender" id="Gender"
+         [ngClass]="{'is-invalid': (isSubmitted || addVehicleForm.controls['Gender'].touched) && addVehicleForm.controls['Gender'].invalid}">
+          <option value="" disabled>Select</option>
+          <option *ngFor="let option of gender" [value]="option">{{ option }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="form-group">
+          <label class="text-white" for="vehicle_no">Vehicle number</label>
+          <input type="text" (input)="formatVehicleNumber()" placeholder="TN 45 CB 9457" class="form-control"
+            id="vehicle_no" name="vehicle_no" formControlName="vehicle_no"
+            [ngClass]="{'is-invalid': (isSubmitted || addVehicleForm.controls['vehicle_no'].touched) && addVehicleForm.controls['vehicle_no'].invalid}">
+          <span class="text-danger"
+            *ngIf="addVehicleForm.controls?.['vehicle_no']?.touched&&addVehicleForm.controls?.['vehicle_no']?.invalid">Please
+            enter valid pattern</span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="form-group">
+          <label class="text-white" for="Vehicle_brand">Vehicle brand</label>
+          <input type="text" placeholder="Ex: Yamaha" class="form-control" id="Vehicle_brand" name="Vehicle_brand"
+          [ngClass]="{'is-invalid': (isSubmitted || addVehicleForm.controls['Vehicle_brand'].touched)
+           && addVehicleForm.controls['Vehicle_brand'].invalid}"
+            formControlName="Vehicle_brand">
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="form-group">
+          <label class="text-white" for="vehicle_type">vehicle type</label>
+          <input type="text" placeholder="Ex: Petrol,Diesel" class="form-control" id="vehicle_type" name="vehicle_type"
+            formControlName="vehicle_type" [ngClass]="{'is-invalid': (isSubmitted || addVehicleForm.controls['vehicle_type'].touched)
+             && addVehicleForm.controls['vehicle_type'].invalid}">
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="form-group">
+          <label class="text-white" for="model_name">model name</label>
+          <input type="text" placeholder="Ex: R15,MT 15" class="form-control" id="model_name" name="model_name"
+            formControlName="model_name" [ngClass]="{'is-invalid': (isSubmitted || addVehicleForm.controls['model_name'].touched) 
+            && addVehicleForm.controls['model_name'].invalid}">
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="isSubmitted&&addVehicleForm.invalid">
+      <span class="text-danger">Please provide all required details</span>
+    </div>
+    <div class="row mt-2">
+      <div class="col d-flex justify-content-center">
+        <button type="submit" class="btn w-25 gradient-custom-2">Add vehicle</button>
+      </div>
+    </div>
+    <div class="row mt-2" *ngIf="showHomebutton">
+      <div class="col d-flex justify-content-center">
+        <button type="button" (click)="goHome()" class="btn text-danger btn-outline-danger w-25">Go to home page</button>
+      </div>
+    </div>
+  </form>
+</div>

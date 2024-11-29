@@ -1,0 +1,231 @@
+
+  body{
+    margin: 0;
+    width: 100%;
+    background-color: black;
+    height: fit-content;
+    padding-top: 100px;
+    overflow-y: hidden;
+  }
+
+  .matTab1{
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .text{
+    margin-bottom: -30px !important;
+    background-color: yellow;
+    width: 217px;
+    text-align: center;
+  }
+  .image{
+    width: 200px;
+    margin-top: 100px;
+    margin-left: 47px;
+  }
+  .btn{
+    margin-left: 314px;
+  }  
+  .blink {
+    animation: blink 1s infinite; 
+  }
+    
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+.container{
+display: flex;
+justify-content: center;
+}
+
+.timeline-with-icons {
+  border-left: 1px solid hsl(0, 0%, 90%);
+  position: relative;
+  list-style: none;
+}
+
+.timeline-with-icons .timeline-item {
+  position: relative;
+}
+
+.timeline-with-icons .timeline-item:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.timeline-with-icons .timeline-icon {
+  position: absolute;
+  left: -48px;
+  background-color: hsl(217, 88.2%, 90%);
+  color: hsl(217, 88.8%, 35.1%);
+  border-radius: 50%;
+  height: 31px;
+  width: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-color{
+  color: #730606;
+}
+
+.example-card{
+  background: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+.card-content{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  // border: 1px solid grey;
+}
+.matTab2{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  }
+.content-inner-div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.label{
+  background: linear-gradient(to right,  #4E342E, #0d0c0c,#730606, #dc1217,);
+  padding: 10px;
+}
+.customerdata{
+  background: #1c1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:root {
+  --primary-color: #fff;
+  --background-color: #212121;
+  --font: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background-color);
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+}
+
+.timeline3 {
+  background: var(--primary-color);
+  // margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.outer {
+  border-left: 2px solid #333;
+}
+
+.card {
+  position: relative;
+  margin: 0 0 20px 20px;
+  padding: 10px;
+  background: black;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 999px;
+  left: -37px;
+  border: 3px solid orangered;
+}
+.bike-image{
+  margin-top: 52px;
+  margin-left: 45px;
+  width: 117px;
+}
+
+.serviceDateContainer{
+display: flex;
+flex-direction: column;
+color: white;
+margin-top: 30px;
+}
+.serviceDateInnerContainer{
+  display: flex;
+  width: 300px;
+  justify-content: space-evenly;
+  margin:10px 0px 10px 0px;
+}
+.bi-circle-fill{
+  color: green;
+}
+.red-text{
+  color: red;
+}
+.card3{
+  width: 200px;
+  color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background: linear-gradient(to right,  #4E342E, #0d0c0c,#730606, #dc1217,);
+}
+.service-history-dates{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//media query
+@media only screen and (max-width: 600px) {
+ body{
+  width: 100%;
+ }
+ .text{
+  width: 180px;
+ }
+ .image {
+  width: 118px;
+  margin-top: 49px;
+  margin-left: 29px;
+  
+}
+
+.bike-image{
+width: 100px;
+}
+}

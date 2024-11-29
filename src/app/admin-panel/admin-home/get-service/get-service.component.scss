@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    width: 100%;
+    background-color: black;
+    padding-top: 170px;
+}
+
+.loginBtn {
+    width: -webkit-fill-available;
+    color: white;
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    height: 50px;
+    border-radius: 35px;
+}
+
+.container {
+    margin: 50px 0px 0px 200px;
+    width: fit-content;
+    ;
+}
+
+.col-md-12 {
+    padding: 10px 0px 20px 0px;
+}
+
+#para {
+    color: red;
+}
+
+.customerdata {
+    background: #1c1b1b;
+}
+
+.example-card{
+    background-color: black;
+    width: 700px;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+
+  .content-inner-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .label{
+    background: linear-gradient(to right,  #4E342E, #0d0c0c,#730606, #dc1217,);
+    padding: 10px;
+  }
+  .button-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.customer-data-button{
+    width: 200px;
+}

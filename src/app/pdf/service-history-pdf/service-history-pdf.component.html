@@ -1,0 +1,113 @@
+
+<div class="btn">
+    <button (click)="downloadPDF()">Download PDF</button>
+</div>
+<div class="container" id="pdf">
+    <div class="row mt-5 pb-5">
+        <div class="col-10">
+            <img src="\assets\images\TRACKO.png" width="150" height="50" alt="Logo">
+        </div>
+    </div>
+    <div class="row row pt-5 pb-5">
+      <div class="col-auto">
+        <span>Date :{{todayDate|date:'dd-MM-yyyy'}}</span>
+        <p>SS Yamaha service center<br>Karur byepass road <br> Trichy-620003</p>
+        <span>Contact no : 9080889899|9090987890</span>
+    </div>
+    </div>
+    <div class="row redLine"></div>
+    <div class="row row pt-5 pb-5">
+        <div class="col">
+            <div class="customerData">
+              <mat-card class="example-card">
+                  <mat-card-header>
+                    <mat-card-title-group>
+                    </mat-card-title-group>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="card-content">
+                      <div class="content-inner-div">
+                        <label class="label">Vehicle owner</label>
+                        <span class="customerdata">{{userDetails[0].registered_certificate_name}}</span>
+                      </div>
+                      <div class="content-inner-div">
+                        <label class="label">Vehicle number</label>
+                        <span class="customerdata">{{serviceDetails[0].vehicle_no}}</span>
+                      </div>
+                      <div class="content-inner-div">
+                        <label class="label">Contact</label>
+                        <span class="customerdata">{{userDetails[0].contactNo}}</span>
+                      </div>
+                      <div class="content-inner-div">
+                        <label class="label">Appointment date</label>
+                        <span class="customerdata">{{serviceDetails[0].service_date}}</span>
+                      </div>
+                      <div class="content-inner-div">
+                        <label class="label">Service type</label>
+                        <span class="customerdata">{{serviceDetails[0].service_type}}</span>
+                      </div>
+                      <div class="content-inner-div">
+                        <label class="label">No of service</label>
+                        <span class="customerdata">{{userDetails[0].no_of_services}}</span>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+             </div>
+          </div>
+    </div>
+    <div class="row redLine"></div>
+    <div class="row row mt-5 mb-5 d-flex justify-content-center">   
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col table-heading">Complaints</th>
+                <th scope="col table-heading">Complaint status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Oil change</th>
+                <td>Done</td>
+              </tr>
+              <tr>
+                <th scope="row">Disk break change</th>
+                <td>Done</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="row redLine"></div>
+    <div class="row d-flex justify-content-evenly mt-5 mb-5 align-items-center">
+      <div class="col-auto">
+        <div class="card">
+          <div class="card-header">
+            Service Date
+          </div>
+          <div class="card-body">
+            <span>{{serviceDetails[0].service_date}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-auto">
+        <div class="card">
+          <div class="card-header">
+            Delivered date
+          </div>
+          <div class="card-body">
+         <span>{{serviceDetails[0].service_date}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-auto">
+        <div class="card">
+          <div class="card-header">
+            Amount
+          </div>
+          <div class="card-body">
+            <span>{{amount|currency:'INR'}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

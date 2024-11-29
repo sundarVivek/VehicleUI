@@ -1,0 +1,112 @@
+<body>
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+  <form class="col-md-6" [formGroup]="editServiceForm" (ngSubmit)="onSubmit()">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">CUSTOMER NAME</label>
+      <input type="text" class="form-control" id="inputEmail4" formControlName="customer_name">
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('customer_name')?.hasError('required') && editServiceForm.get('customer_name')?.touched">Please
+        fill this field !</span>
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('customer_name')?.hasError('minlength') && editServiceForm.get('customer_name')?.touched">
+        Name must be at least 2 characters long.
+      </span>
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">CONTACT</label>
+      <input type="number" class="form-control" id="inputEmail4" formControlName="contact">
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('contact')?.hasError('required') && editServiceForm.get('contact')?.touched">Please
+        fill this field !</span>
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('contact')?.hasError('minlength') && editServiceForm.get('contact')?.touched&& editServiceForm.get('contact')?.hasError('maxlength') && editServiceForm.get('contact')?.touched">
+        Contact must be in 1o numbers
+      </span>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">VEHICLE NO</label>
+      <input type="text" class="form-control" id="inputPassword4" formControlName="vehicleNo">
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('VehicleNo')?.hasError('required') && editServiceForm.get('VehicleNo')?.touched">Please
+        fill this field !</span>
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('VehicleNo')?.hasError('pattern') && editServiceForm.get('VehicleNo')?.touched">
+        Vehicle number must be in (TN 01 we 9457)
+      </span>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">MODEL NAME</label>
+      <input type="text" class="form-control" id="inputPassword4" formControlName="model_name">
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('model_name')?.hasError('required') && editServiceForm.get('model_name')?.touched">Please
+        fill this field !</span>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">APPOINTMENT DATE</label>
+      <input type="date" class="form-control" id="inputPassword4" formControlName="appointment_date">
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('appointment_date')?.hasError('required') && editServiceForm.get('appointment_date')?.touched">Please
+        fill this field !</span>
+    </div>
+    <div class="col-md-6">
+      <label for="inputState" class="form-label">Service Type</label>
+      <select id="inputState" class="form-select" formControlName="service_type">
+        <option>Select</option>
+        <option value="Free service">Free service</option>
+        <option value="Paid service">Paid service</option>
+      </select>
+      <span class="errorMessage"
+        *ngIf="editServiceForm.get('service_type')?.hasError('required') && editServiceForm.get('service_type')?.touched">Please
+        fill this field !</span>
+    </div>
+    <div class="radioLabel">
+      <label class="form-label">DO YOU HAVE ANY COMPLAINT?</label>
+    </div>
+    <div class="complaint">
+      <div class="radioContainer">
+        <div class="form-check">
+          <input (change)="changeRadio()" class="form-check-input" type="radio" id="flexCheckDefault"
+            formControlName="radiobutton" value="yes">
+          <label class="form-check-label" for="flexCheckDefault">
+            Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input (change)="changeRadio()" class="form-check-input" type="radio" id="flexCheckDefault"
+            formControlName="radiobutton" value="no">
+          <label class="form-check-label" for="flexCheckDefault">
+            No
+          </label>
+        </div>
+      </div>
+      <div *ngIf="show">
+        <div>
+          <label for="inputPassword4" class="form-label complaints">COMPLAINTS</label>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"></label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="complaintbox1">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"></label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="complaintbox2">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"></label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="complaintbox3">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"></label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="complaintbox4">
+        </div>
+      </div>
+      <span class="errorMessage" *ngIf="submitted&&editServiceForm.get('radiobutton')?.hasError('required')">Please fill
+        this field !</span>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-danger">ADD SERVICE</button>
+    </div>
+  </form>
+</body>

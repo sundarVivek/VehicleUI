@@ -1,0 +1,41 @@
+
+<div mat-dialog-content class="dialog-container">
+    <div class="form-container">
+        <form [formGroup]="statusChangeForm" (ngSubmit)="changeStatus()">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="flexRadioDefault"
+                 name="flexRadioDefault" id="flexRadioDefault1" value="Ready for service">
+                <label class="form-check-label" for="flexRadioDefault1">
+                 Ready for service
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="flexRadioDefault"
+                 name="flexRadioDefault" id="flexRadioDefault2" value="Service in progress">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Service in progress
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="flexRadioDefault"
+                 name="flexRadioDefault" id="flexRadioDefault3" value="Ready for delivery">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Ready for delivery
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="flexRadioDefault"
+                 name="flexRadioDefault" id="flexRadioDefault4" value="delivered">
+                <label class="form-check-label" for="flexRadioDefault1">
+                 Delivered
+                </label>
+              </div>
+              <div class="change-btn">
+                <button type="submit" class="btn btn-outline-light">Change</button>
+              </div>
+        </form>
+    </div>  
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Close</button>
+</div>

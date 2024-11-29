@@ -1,0 +1,64 @@
+{
+  "user": [
+    {
+      "owner_name": "admin",
+      "vehicle_no": "admin@123",
+      "role": "admin"
+    },
+    {
+      "owner_name": "sundar",
+      "vehicle_no": "TN45CB9457",
+      "role": "customer"
+    },
+    {
+      "owner_name": "Abinesh",
+      "vehicle_no": "TN45 CB 9458",
+      "role": "customer"
+    },
+    {
+      "owner_name": "Anitha",
+      "vehicle_no": "TN45 CB 9459",
+      "role": "customer"
+    },
+    {
+      "owner_name": "Gayathri",
+      "vehicle_no": "TN45 CB 9460",
+      "role": "customer"
+    },
+    {
+      "owner_name": "Aishwarya",
+      "vehicle_no": "TN45 CB 9461",
+      "role": "customer"
+    }
+  ],
+  "service": [
+    {
+      "customer_name": "Gayathri",
+      "contact": 1234567890,
+      "vehicle_no": "TN45CB7657",
+      "model_name": "R15 v4",
+      "appointment_date": "2023-11-16",
+      "service_type": "Free service",
+      "radiobutton": "no",
+      "complaintbox1": "",
+      "complaintbox2": "",
+      "complaintbox3": "",
+      "complaintbox4": "",
+      "id": 1
+    },
+    {
+      "customer_name": "Gayathri",
+      "contact": 1234567890,
+      "vehicle_no": "TN45CB7657",
+      "model_name": "R15 v4",
+      "appointment_date": "2023-11-16",
+      "service_type": "Free service",
+      "radiobutton": "no",
+      "complaintbox1": "",
+      "complaintbox2": "",
+      "complaintbox3": "",
+      "complaintbox4": "",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+
+  <body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+              <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                <div class="card-body p-4 p-md-5">
+                    <div class="col-md-8 col-lg-7 col-xl-6 image">
+                        <img src="assets\images\yamaha-logo-3860.png"
+                          class="img-fluid" alt="Phone image">
+                      </div>
+                  <form [formGroup]="adminRegister" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input type="text" id="firstName" class="form-control form-control-lg" formControlName="username" />
+                          <label class="form-label" for="firstName">Username</label>
+                        </div>
+                      </div>
+                      <!-- <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input type="text" id="firstName" class="form-control form-control-lg" formControlName="acess_key" />
+                          <label class="form-label" for="firstName">Access key</label>
+                        </div>
+                      </div> -->
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                          <input type="email" id="emailAddress" class="form-control form-control-lg" formControlName="email" />
+                          <label class="form-label" for="emailAddress">Company Email</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                          <input type="tel" id="phoneNumber" class="form-control form-control-lg" formControlName="phone" />
+                          <label class="form-label" for="phoneNumber">Phone Number</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input type="email" id="emailAddress" class="form-control form-control-lg" formControlName="password" name="password" />
+                            <label class="form-label" for="emailAddress">Password</label>
+                  
+                          </div>
+                          <div class="div">
+                            <span *ngIf="f['password']?.touched&&f['password']?.errors">
+                              <p class="error-message">Password should be 6-12 characters</p>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input type="tel" id="phoneNumber" class="form-control form-control-lg" formControlName="confirm_password" name="confirm_password" />
+                            <label class="form-label" for="phoneNumber">Confirm password</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4 pb-2 error-message" *ngIf="adminRegister.hasError('passwordMismatch') && (adminRegister.get('confirm_password')?.dirty || adminRegister.get('confirm_password')?.touched)">
+                          Password and confirm password do not match.
+                        </div>
+                      </div>
+                    <div class="mt-4 pt-2">
+                      <input class="btn btn-danger btn-lg" type="submit" value="Register" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </body>

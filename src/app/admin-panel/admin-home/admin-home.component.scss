@@ -1,0 +1,360 @@
+.btn-circle {
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    margin-left: 30px;
+}
+
+.mainContainer {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.container {
+    margin-left: 145px;
+    margin-top: 20px;
+ 
+}
+.card-footer{
+ margin-top: 35px;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+.logoutbtn {
+    margin-top: 30px;
+    margin-left: 1300px;
+}
+
+.navbar {
+    background-color: #eb3941 !important;
+}
+
+.card {
+    background: none;
+    padding: 0;
+}
+.card-body{
+    padding: 0;
+}
+
+.btnDrpdown {
+    margin-left: 150px;
+    font-size: 12px;
+    background: linear-gradient(to right, #4E342E, #0d0c0c, );
+    border: none;
+}
+
+#count {
+    color: white;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    margin-top: 33px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#text {
+    color: whitesmoke;
+    text-align: center;
+    font-size: x-small;
+    font-family: inherit;
+    background: linear-gradient(to right, #4E342E, #0d0c0c, #730606, #dc1217);
+    padding: 0px 5px 0px 5px;
+    border-radius: 20px;
+    width: -webkit-fill-available;
+}
+
+.heading {
+    margin-bottom: 30px;
+    position: absolute;
+}
+
+.chartContainer {
+    display: flex;
+    // margin-left: 170px;
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.barChart{
+   display: flex;
+}
+.doughnut{
+    margin-left: 20px;
+}
+
+#myChart {
+    height: 200px !important;
+    width: 300px !important;
+ 
+}
+
+.dropdownSelect {
+    width: 120px;
+    background-color: #000;
+    color: green;
+}
+
+.label {
+    color: white;
+    padding-right: 20px;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.outer-ring {
+    position: absolute;
+    left: calc(50% - 150px);
+    height: 75px;
+    width: 75px;
+    background: linear-gradient(to right, #4E342E, #0d0c0c, #730606, #dc1217, );
+    border-radius: 50%;
+    /*  Rotate  */
+    animation-duration: 2s;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    left: 100px;
+    top: 73px;
+}
+
+.inner-ring {
+    position: absolute;
+    left: calc(50% - 140px);
+    height: 60px;
+    width: 60px;
+    background-color: rgb(30, 23, 23) !important;
+    border-radius: 50%;
+    left: 110px;
+    top: 80px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.overall-container {
+    margin-left: 60px;
+}
+
+.overall-container4 {
+    margin-left: 41px;
+    // width: 266px;
+}
+
+.btn-group {
+    display: block;
+}
+
+.speedometer {
+    // margin-top: 5px;
+    // margin-left: 63px;
+}
+
+#speed {
+    color: white;
+    font-size: 17px;
+    margin-top: -83px;
+    margin-left: 83px;
+    z-index: 1;
+    top: 45%;
+    font-family: fantasy;
+}
+
+#speed4 {
+    color: white;
+    font-size: 17px;
+    margin-top: -93px;
+    margin-left: 96px;
+    font-family: fantasy;
+    
+}
+
+.totalBtn{
+    width: 223px !important;
+    font-size: small;
+}
+
+#meter-bg-bar {
+    animation: dash 4s linear forwards infinite;
+    stroke-dasharray: 615;
+}
+.svg-container{
+    margin-left: 30px;
+}
+
+svg {
+    color: whitesmoke;
+}
+
+.white-text {
+    color: white;
+    margin-left: 10px;
+}
+
+.badges {
+    margin-top: 36px;
+    font-size: x-small;
+    font-family: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    width: 91%;
+}
+
+.status-container {
+    color: white;
+    font-size: smaller;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    padding-right: 20px;
+    margin-top: 20px;
+    width: max-content;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.status-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.status-text {
+    padding-left: 5px;
+}
+
+.bi-gear {
+    animation: rotate 2s linear infinite;
+}
+
+.bi1 {
+    color: red;
+}
+
+.bi2 {
+    color: orange;
+}
+
+.bi3 {
+    color: blue;
+}
+
+.bi4 {
+    color: green;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+
+    0%,
+    100% {
+        stroke-dashoffset: 615;
+    }
+
+    25% {
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dashoffset: 307.5;
+    }
+
+    75% {
+        stroke-dashoffset: 0;
+    }
+}
+.serviceStatus{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+}
+.form-check
+{
+    color: white;
+}
+
+.container2{
+    margin-left: 50px;
+    justify-content: center;
+}
+.btn{
+    width: 200px;
+    font-size: small;
+}
+.overallBtn{
+    margin-left: 250px;
+    font-size: small;
+    border-radius: 25px;
+    background-color: #171616;
+}
+.status-container1{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: small;
+}
+.status-container2{
+    padding: 10px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.form-check-input[type="radio"]:checked {
+    background-color: red !important;
+  }
+
+  .form-check{
+    display: flex;
+    justify-content: center;
+  }
+  .noData{
+    height: fit-content;
+    padding: 10px;
+    margin-top: 65px;
+    border-radius: 25px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    color: red;
+    text-align: center;
+  }
+  .bi-exclamation-circle{
+    color: red;
+  }
+
+  .leftContainer{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .rightContainer{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  
+  
